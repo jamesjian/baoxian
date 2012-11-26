@@ -11,8 +11,8 @@ class Pagecategory extends Front {
     public $view_path;
 
     public function init() {
-        $this->view_path = APPLICATION_PATH . 'module/front/view/pagecategory/';
         parent::init();
+        $this->view_path = APPLICATION_PATH . 'module/front/view/pagecategory/';
     }
 
     //one page category
