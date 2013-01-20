@@ -13,26 +13,26 @@ class Tool {
          xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
          xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 		<url>
-      <loc>http://www.baoxian.com.au/</loc>
+      <loc>http://' . SERVER_NAME . '/</loc>
       <lastmod>' . date('Y-m-d') . '</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
    </url>
 		<url>
-      <loc>http://www.baoxian.com.au/about-us.php</loc>
+      <loc>http://' . SERVER_NAME . '/about-us.php</loc>
       <lastmod>' . date('Y-m-d') . '</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
    </url>
 		<url>
-      <loc>http://www.baoxian.com.au/contact-us.php</loc>
+      <loc>http://' . SERVER_NAME . '/contact-us.php</loc>
       <lastmod>' . date('Y-m-d') . '</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
    </url>
 		';
         $cats = Model_Articlecategory::get_all_active_cats();
-        $link_prefix = "http://www.baoxian.com.au/front/article/category/";
+        $link_prefix = "http://' . SERVER_NAME . '/front/article/category/";
         foreach ($cats as $cat) {
             $cat_str = '<url>
       <loc>' . $link_prefix . $cat['title'] . '</loc>
@@ -44,7 +44,7 @@ class Tool {
         }
         $articles = Model_Article::get_all_active_articles();
         //\Zx\Test\Test::object_log('$articles', $articles, __FILE__, __LINE__, __CLASS__, __METHOD__);
-        $link_prefix = "http://www.baoxian.com.au/front/article/content/";
+        $link_prefix = 'http://' . SERVER_NAME . '/front/article/content/';
         foreach ($articles as $article) {
         //\Zx\Test\Test::object_log('$articles',$article['id'], __FILE__, __LINE__, __CLASS__, __METHOD__);
             $article_str = '<url>
